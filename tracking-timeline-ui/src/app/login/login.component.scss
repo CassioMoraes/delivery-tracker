@@ -1,0 +1,27 @@
+.center {
+    text-align: center;
+}
+
+.login-fields {
+    p {
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+
+    input {
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+}
+
+.link-button {
+    border: none;
+    color: blue;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.error-message {
+    font-size: 20px;
+    color: red;
+}

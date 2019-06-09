@@ -1,0 +1,12 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to Delivery Tracker!
+  </h1>
+</div>
+<div>
+  <app-login (loggedUserEmmiter)="parentUser=$event"></app-login>
+  <app-tracking [user]="parentUser"></app-tracking>
+</div>
+
+<router-outlet></router-outlet>

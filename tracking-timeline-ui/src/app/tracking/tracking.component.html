@@ -1,0 +1,26 @@
+<div class="center" *ngIf="user">
+    Bom dia, {{user.username | uppercase}}
+    <div class="search-fields" *ngIf="!trackingInfo">
+        <p>Para buscar uma entrega preencha os campos abaixo:</p>
+        <p>Nota Fiscal</p>
+        <input [(ngModel)]="document.notaFiscal">
+        <p>CNP/CNPJ</p>
+        <input [(ngModel)]="document.documento1">
+        <br>
+        <button (click)="searchDelivery()">Buscar</button>
+    </div>
+    <div class="deliverty-status" *ngIf="trackingInfo">
+        <p>Status da entrega: {{trackingInfo.status}}</p>
+        <p>Remetente: {{trackingInfo.sender}}</p>
+        <p>Destinatario: {{trackingInfo.receiver}}</p>
+        <div class="delivery-steps">
+            <div class="delivery-step" *ngFor="let step of trackingInfo.steps">
+                <p>Status: {{step.status}}</p>
+                <p>Data: {{step.date | date: 'medium'}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="error-message center" *ngIf="errorMessage.length > 0">
+    <p>{{errorMessage}}</p>
+</div>

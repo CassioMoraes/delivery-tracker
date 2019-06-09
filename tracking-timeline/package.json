@@ -1,0 +1,23 @@
+{
+  "name": "tracking-timeline",
+  "version": "0.0.1",
+  "description": "Timeline for tracking deliveries",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Cassio Castilhos Moraes",
+  "license": "ISC",
+  "dependencies": {
+    "cpf-cnpj-validator": "0.0.6",
+    "express": "^4.17.1",
+    "joi": "^14.3.1",
+    "lodash": "^4.17.11",
+    "request-promise": "^4.2.4"
+  },
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "jest": "^24.8.0",
+    "sinon": "^7.3.2"
+  }
+}

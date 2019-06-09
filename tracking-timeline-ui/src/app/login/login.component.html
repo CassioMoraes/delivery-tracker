@@ -1,0 +1,31 @@
+<div *ngIf="!user.accessToken">
+    <div class="center" *ngIf="!isCreatingLogin">
+        <div class="login-fields">
+            <p>Usuário</p>
+            <input [(ngModel)]="user.username">
+            <p>Senha</p>
+            <input [(ngModel)]="user.password">
+            <br>
+            <button (click)="logIn()">LogIn</button>
+        </div>
+        <button class="link-button" (click)="hasAccount(false)">Ainda não tenho conta</button>
+    </div>
+    <div class="center" *ngIf="isCreatingLogin">
+        <div class="login-fields">
+            <p>Nome Completo</p>
+            <input [(ngModel)]="user.fullname">
+            <p>E-mail</p>
+            <input [(ngModel)]="user.email">
+            <p>Usuário</p>
+            <input [(ngModel)]="user.username">
+            <p>Senha</p>
+            <input [(ngModel)]="user.password">
+            <br>
+            <button (click)="createAccount()">Criar conta</button>
+        </div>
+        <button class="link-button" (click)="hasAccount(true)">Já tenho conta</button>
+    </div>
+    <div class="error-message center" *ngIf="errorMessage.length > 0">
+        <p>{{errorMessage}}</p>
+    </div>
+</div>
