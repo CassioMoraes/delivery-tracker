@@ -9,11 +9,11 @@ class LoginController {
         if (loginCreationInfo.message)
             throw new Error(loginCreationInfo.message);
 
-        return this.logIn(loginUser.username, loginUser.password);
+        return await this.logIn(loginUser);
     }
 
-    async logIn(username, password) {
-        const loginInfo = await this.loginService.logIn(username, password);
+    async logIn(loginUser) {
+        const loginInfo = await this.loginService.logIn(loginUser);
         
         if (loginInfo.message)
             throw new Error(loginInfo.message);
